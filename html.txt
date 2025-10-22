@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart - Eletrônicos com Qualidade e Preço Justo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: translateY(-2px);
+        }
+        .flash-sale {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="h-full bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-600">TechMart</h1>
+                    <span class="ml-2 text-sm text-gray-500">Eletrônicos Premium</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#ofertas" class="text-gray-700 hover:text-indigo-600 font-medium">Ofertas</a>
+                    <a href="#mais-vendidos" class="text-gray-700 hover:text-indigo-600 font-medium">Mais Vendidos</a>
+                    <a href="#entrega" class="text-gray-700 hover:text-indigo-600 font-medium">Entrega</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600 font-medium">TechMart - Sua loja de confiança</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-bold mb-6">Tecnologia que Transforma</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Descubra os melhores eletrônicos com qualidade garantida, preços imbatíveis e entrega rápida para todo o Brasil.</p>
+            <button class="btn-primary text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg">
+                Ver Ofertas Especiais
+            </button>
+        </div>
+    </section>
+
+    <!-- Mais Vendidos -->
+    <section id="mais-vendidos" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">🏆 Mais Vendidos</h3>
+                <p class="text-lg text-gray-600">Os produtos preferidos dos nossos clientes</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Produto Mais Vendido 1 - PS5 Fat -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="h-48 bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=300&h=200&fit=crop" alt="PlayStation 5" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-900">PS5 Fat</h4>
+                            <div class="flex flex-col gap-1">
+                                <span class="bg-yellow-500 text-white px-2 py-1 rounded text-xs font-bold animate-pulse">🏆 #1 VENDIDO</span>
+                                <span class="bg-orange-500 text-white px-2 py-1 rounded text-xs font-bold animate-pulse">ÚLTIMO!</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">4K, 120fps, SSD 1TB, Ray Tracing</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <span class="text-xl font-bold text-green-600">R$ 1.749</span>
+                                <span class="text-sm text-gray-400 line-through ml-1">R$ 3.499</span>
+                            </div>
+                            <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <button id="ps5-payment-btn" class="w-full btn-primary text-white py-2 rounded-lg font-semibold">
+                            💳 Comprar Agora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto Mais Vendido 2 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="h-48 bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop" alt="Apple Watch" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-900">Smartwatch Fitness</h4>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">-50%</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Monitor cardíaco, GPS, à prova d'água</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <span class="text-xl font-bold text-green-600">R$ 449</span>
+                                <span class="text-sm text-gray-400 line-through ml-1">R$ 899</span>
+                            </div>
+                            <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto Mais Vendido 3 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="h-48 bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=300&h=200&fit=crop" alt="Smart TV Samsung" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-900">Smart TV 55" 4K</h4>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">-50%</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Android TV, HDR, Wi-Fi integrado</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <span class="text-xl font-bold text-green-600">R$ 1.099</span>
+                                <span class="text-sm text-gray-400 line-through ml-1">R$ 2.199</span>
+                            </div>
+                            <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto Mais Vendido 4 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="h-48 bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=200&fit=crop" alt="Câmera Canon DSLR" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-900">Câmera Digital Pro</h4>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">-50%</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">24MP, 4K Video, Lente 18-55mm</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <span class="text-xl font-bold text-green-600">R$ 949</span>
+                                <span class="text-sm text-gray-400 line-through ml-1">R$ 1.899</span>
+                            </div>
+                            <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas do Dia -->
+    <section id="ofertas" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">🔥 MEGA LIQUIDAÇÃO - 50% OFF</h3>
+                <p class="text-lg text-gray-600">Todos os produtos com 50% de desconto! Promoção por tempo limitado!</p>
+                <div class="flash-sale inline-block bg-red-500 text-white px-4 py-2 rounded-full mt-4">
+                    ⏰ Termina em: 23h 45min
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Produto 1 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="h-64 bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=300&fit=crop" alt="iPhone 15 Pro Max" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-semibold text-gray-900">iPhone 15 Pro Max</h4>
+                            <div class="flex flex-col gap-1">
+                                <span class="bg-red-500 text-white px-2 py-1 rounded text-sm font-bold">-50%</span>
+                                <span class="bg-green-500 text-white px-2 py-1 rounded text-xs font-bold animate-pulse">MEGA OFERTA!</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Tela 6.7", 256GB, Câmera Tripla 48MP, 5G</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">R$ 1.999</span>
+                                <span class="text-lg text-gray-400 line-through ml-2">R$ 3.999</span>
+                            </div>
+                            <div class="text-yellow-400">⭐⭐⭐⭐⭐ (4.8)</div>
+                        </div>
+                        <button class="w-full btn-primary text-white py-3 rounded-lg font-semibold">
+                            Comprar Agora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="h-64 bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop" alt="Notebook Gamer" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-semibold text-gray-900">Notebook Gamer Ultra</h4>
+                            <div class="flex flex-col gap-1">
+                                <span class="bg-red-500 text-white px-2 py-1 rounded text-sm font-bold">-50%</span>
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold animate-pulse">MEGA OFERTA!</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Intel i7, 16GB RAM, RTX 4060, SSD 512GB</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">R$ 2.999</span>
+                                <span class="text-lg text-gray-400 line-through ml-2">R$ 5.999</span>
+                            </div>
+                            <div class="text-yellow-400">⭐⭐⭐⭐⭐ (4.9)</div>
+                        </div>
+                        <button class="w-full btn-primary text-white py-3 rounded-lg font-semibold">
+                            Comprar Agora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="h-64 bg-gray-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Fone Bluetooth Premium" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-semibold text-gray-900">Fone Bluetooth Premium</h4>
+                            <div class="flex flex-col gap-1">
+                                <span class="bg-red-500 text-white px-2 py-1 rounded text-sm font-bold">-50%</span>
+                                <span class="bg-orange-500 text-white px-2 py-1 rounded text-xs font-bold animate-pulse">MEGA OFERTA!</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Cancelamento de ruído, 30h bateria, Hi-Fi</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">R$ 249</span>
+                                <span class="text-lg text-gray-400 line-through ml-2">R$ 499</span>
+                            </div>
+                            <div class="text-yellow-400">⭐⭐⭐⭐⭐ (4.7)</div>
+                        </div>
+                        <button class="w-full btn-primary text-white py-3 rounded-lg font-semibold">
+                            Comprar Agora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entrega Rápida -->
+    <section id="entrega" class="py-16 bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-4">🚚 Entrega Rápida e Segura</h3>
+                <p class="text-xl">Receba seus produtos com agilidade e total segurança</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⚡</div>
+                    <h4 class="text-xl font-semibold mb-2">Entrega Express</h4>
+                    <p class="text-indigo-100">Receba em até 24h nas principais capitais</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🔒</div>
+                    <h4 class="text-xl font-semibold mb-2">100% Seguro</h4>
+                    <p class="text-indigo-100">Embalagem reforçada e rastreamento completo</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🆓</div>
+                    <h4 class="text-xl font-semibold mb-2">Frete Grátis</h4>
+                    <p class="text-indigo-100">Em compras acima de R$ 299 para todo o Brasil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="text-xl font-bold mb-4">TechMart</h5>
+                    <p class="text-gray-400">Sua loja de eletrônicos de confiança. Qualidade, preço justo e atendimento excepcional.</p>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Produtos</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📱 Smartphones</li>
+                        <li>💻 Notebooks</li>
+                        <li>🎧 Áudio & Som</li>
+                        <li>📺 TVs & Monitores</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Garantias</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>✅ 30 dias para troca</li>
+                        <li>🛡️ Garantia estendida</li>
+                        <li>🔄 Devolução grátis</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Pagamento</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>💳 Cartão até 12x</li>
+                        <li>🏦 PIX com desconto</li>
+                        <li>💰 Boleto bancário</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechMart. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Botão de pagamento do PS5
+            document.getElementById('ps5-payment-btn').addEventListener('click', function() {
+                // Aqui você pode adicionar o link de pagamento
+                // Por exemplo: window.open('https://seulink.com', '_blank');
+                
+                // Por enquanto, vou mostrar uma mensagem
+                this.textContent = '🔄 Redirecionando...';
+                this.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    // Link de pagamento do PS5 Fat
+                    window.open('https://mpago.la/1rj5qPU', '_blank', 'noopener,noreferrer');
+                    
+                    // Restaurar o botão
+                    this.textContent = '💳 Comprar Agora';
+                    this.style.background = '';
+                }, 1000);
+            });
+
+            // Outros botões de compra (genéricos)
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('Comprar') && button.id !== 'ps5-payment-btn') {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Feedback visual
+                        const originalText = this.textContent;
+                        this.textContent = '📞 Entre em contato';
+                        this.style.background = '#6366f1';
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.background = '';
+                        }, 3000);
+                    });
+                }
+            });
+        });
+
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Timer das ofertas (simulado)
+        function updateTimer() {
+            const timerElement = document.querySelector('.flash-sale');
+            if (timerElement) {
+                const now = new Date();
+                const endOfDay = new Date(now);
+                endOfDay.setHours(23, 59, 59, 999);
+                
+                const diff = endOfDay - now;
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                timerElement.innerHTML = `⏰ Termina em: ${hours}h ${minutes}min`;
+            }
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 60000); // Atualiza a cada minuto
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9929342a709dba13',t:'MTc2MTEzODMwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
